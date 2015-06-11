@@ -38,9 +38,11 @@
 	</profiles>
 
 	<modules>
-		<module>ch.opentrainingcenter.client.core.product</module>
-		<module>ch.opentrainingcenter.build.targetdefinition</module>
 		<module>ch.opentrainingcenter.client.core</module>
+		<module>ch.opentrainingcenter.client.core.product</module>
+		<!-- 
+		<module>ch.opentrainingcenter.build.targetdefinition</module>
+		 -->
 	</modules>
 
 	<build>
@@ -58,8 +60,9 @@
 				<version>${tycho.version}</version>
 
 				<configuration>
+				<resolver>p2</resolver>
 					<!-- This defines the target definition file -->
-
+<!-- 
 					<target>
 						<artifact>
 							<groupId>ch.opentrainingcenter</groupId>
@@ -67,17 +70,21 @@
 							<version>1.0.0-SNAPSHOT</version>
 						</artifact>
 					</target>
+					 -->
 					<environments>
+					<!-- 
 						<environment>
 							<os>linux</os>
 							<ws>gtk</ws>
 							<arch>x86</arch>
 						</environment>
+						 -->
 						<environment>
 							<os>linux</os>
 							<ws>gtk</ws>
 							<arch>x86_64</arch>
 						</environment>
+						<!-- 
 						<environment>
 							<os>win32</os>
 							<ws>win32</ws>
@@ -93,6 +100,7 @@
 							<ws>cocoa</ws>
 							<arch>x86_64</arch>
 						</environment>
+						 -->
 					</environments>
 				</configuration>
 			</plugin>
