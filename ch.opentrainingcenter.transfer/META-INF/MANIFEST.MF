@@ -6,8 +6,6 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: ch.opentrainingcenter.Activator
 Bundle-Vendor: Sascha Iseli
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Import-Package: org.eclipse.osgi.util,
- org.osgi.framework
 Bundle-ActivationPolicy: lazy
 Export-Package: ch.opentrainingcenter.transfer
-Require-Bundle: org.eclipse.osgi.util
+Require-Bundle: org.eclipse.core.runtime
