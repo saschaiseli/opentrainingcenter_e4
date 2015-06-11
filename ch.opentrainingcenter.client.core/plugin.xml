@@ -8,10 +8,6 @@
             name="ch.opentrainingcenter.client.core"
             application="org.eclipse.e4.ui.workbench.swt.E4Application">
          <property
-               name="lifeCycleURI"
-               value="bundleclass://ch.opentrainingcenter.client.core/ch.opentrainingcenter.client.core.E4LifeCycle">
-         </property>
-         <property
                name="applicationCSS"
                value="platform:/plugin/ch.opentrainingcenter.client.core/css/default.css">
          </property>
