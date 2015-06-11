@@ -22,10 +22,10 @@ public class Athlete implements java.io.Serializable, IAthlete {
     private String name;
     private Date birthday;
     private Integer maxheartrate;
-    private Set<IRoute> routes = new HashSet<IRoute>(0);
-    private Set<IHealth> healths = new HashSet<IHealth>(0);
-    private Set<ITraining> trainings = new HashSet<ITraining>(0);
-    private Set<IPlanungWoche> planungwoches = new HashSet<IPlanungWoche>(0);
+    private Set<IRoute> routes = new HashSet<>(0);
+    private Set<IHealth> healths = new HashSet<>(0);
+    private Set<ITraining> trainings = new HashSet<>(0);
+    private Set<IPlanungWoche> planungwoches = new HashSet<>(0);
 
     public Athlete() {
     }

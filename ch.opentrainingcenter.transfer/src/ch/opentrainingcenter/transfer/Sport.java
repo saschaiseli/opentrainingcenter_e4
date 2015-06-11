@@ -1,11 +1,11 @@
 package ch.opentrainingcenter.transfer;
 
 public enum Sport {
-    RUNNING(0, "RUNNING", "Joggen", "icons/16_16/running_16_16.png"), //$NON-NLS-1$ //$NON-NLS-2$
+    RUNNING(0, Messages.Sport_RUNNING, Messages.Sport_Joggen, "icons/16_16/running_16_16.png"), //$NON-NLS-1$
 
-    BIKING(1, "BIKE", "Velo", "icons/16_16/bike_16_16.png"), //$NON-NLS-1$ //$NON-NLS-2$
+    BIKING(1, Messages.Sport_BIKE, Messages.Sport_Velo, "icons/16_16/bike_16_16.png"), //$NON-NLS-1$
 
-    OTHER(2, "OTHER", "unbekannt", "icons/man_u_32_32.png"); //$NON-NLS-1$ //$NON-NLS-2$
+    OTHER(2, Messages.Sport_OTHER, Messages.Sport_unbekannt, "icons/man_u_32_32.png"); //$NON-NLS-1$
 
     private final int index;
     private final String message;

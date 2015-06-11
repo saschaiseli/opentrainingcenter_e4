@@ -35,8 +35,7 @@ public final class CommonTransferFactory {
         return new Health(athlete, weight, cardio, dateofmeasure);
     }
 
-    public static ITraining createTraining(final RunData runData, final HeartRate heart, final double maximumSpeed, final String note, final IWeather weather,
-            final IRoute route) {
+    public static ITraining createTraining(final RunData runData, final HeartRate heart, final String note, final IWeather weather, final IRoute route) {
         return new Training(runData, heart, note, weather, route);
     }
 
@@ -99,7 +98,7 @@ public final class CommonTransferFactory {
     }
 
     public static IRoute createDefaultRoute(final IAthlete athlete) {
-        return new Route("Unbekannt", athlete);
+        return new Route(Messages.CommonTransferFactory_0, athlete);
     }
 
     /**
@@ -143,7 +142,7 @@ public final class CommonTransferFactory {
      *                           LapInfo
      * |----------------------<--------->-----|
      * 0m                   140m       180m
-     * 
+     *
      *                     Start       End
      *
      *

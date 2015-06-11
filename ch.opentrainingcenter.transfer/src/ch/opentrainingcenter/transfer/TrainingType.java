@@ -60,7 +60,7 @@ public enum TrainingType {
     }
 
     public static String[] getAllTypes() {
-        final List<String> typeTitles = new ArrayList<String>();
+        final List<String> typeTitles = new ArrayList<>();
         for (final TrainingType type : TrainingType.values()) {
             typeTitles.add(type.getName());
         }
