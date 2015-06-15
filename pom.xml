@@ -12,6 +12,7 @@
 
 	<properties>
 		<tycho.version>0.22.0</tycho.version>
+		<jacoco.version>0.7.1.201405082137</jacoco.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<luna-repo.url>http://download.eclipse.org/releases/luna</luna-repo.url>
 	</properties>
@@ -38,15 +39,32 @@
 	</profiles>
 
 	<modules>
+		<!-- Client -->
 		<module>ch.opentrainingcenter.client.core</module>
 		<module>ch.opentrainingcenter.client.core.product</module>
-	
-	    <module>ch.opentrainingcenter.transfer</module>
-	
+
+		<!-- Communication -->
+		<module>ch.opentrainingcenter.transfer</module>
+
+		<!-- Server -->
+		<module>ch.opentrainingcenter.server.service</module>
+
+		<!-- Target Definition -->
 		<module>ch.opentrainingcenter.build.targetdefinition</module>
-	
+
+
+		<!-- Tests -->
+		<module>junit</module>
+		<module>ch.opentrainingcenter.server.service.tests</module>
+
+		<!-- 3th Party -->
+		<module>jodatime</module>
+		<module>logging</module>
+
 	</modules>
 
+
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -54,25 +72,42 @@
 				<artifactId>tycho-maven-plugin</artifactId>
 				<version>${tycho.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<useUIHarness>false</useUIHarness>
+					<argLine>-Xms256m -Xmx512m -XX:MaxPermSize=256M</argLine>
+					<includes>
+						<include>**/*Tests.*</include>
+					</includes>
+				</configuration>
 			</plugin>
-
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>2.2</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.16</version>
+				<configuration>
+					<forkCount>5</forkCount>
+					<providerHint>junit</providerHint>
+					<reuseForks>true</reuseForks>
+					<argLine>-Dnet.sf.ehcache.disabled=true</argLine>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho.version}</version>
 
 				<configuration>
-				<resolver>p2</resolver>
-					<!-- This defines the target definition file -->
-
-					<target>
-						<artifact>
-							<groupId>ch.opentrainingcenter</groupId>
-							<artifactId>ch.opentrainingcenter.build.targetdefinition</artifactId>
-							<version>1.0.0-SNAPSHOT</version>
-						</artifact>
-					</target>
-					
+					<resolver>p2</resolver>
+					<!-- This defines the target definition file <target> <artifact> <groupId>ch.opentrainingcenter</groupId> 
+						<artifactId>ch.opentrainingcenter.build.targetdefinition</artifactId> <version>1.0.0-SNAPSHOT</version> 
+						</artifact> </target> -->
 					<environments>
 						<environment>
 							<os>linux</os>
