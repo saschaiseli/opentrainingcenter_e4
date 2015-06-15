@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests
+Bundle-SymbolicName: ch.opentrainingcenter.server.service.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Sascha Iseli
+Fragment-Host: ch.opentrainingcenter.server.service
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: junit
+Eclipse-RegisterBuddy: otc_junit4

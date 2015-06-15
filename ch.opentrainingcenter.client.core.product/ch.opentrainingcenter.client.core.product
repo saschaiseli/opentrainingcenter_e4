@@ -16,7 +16,17 @@
    <windowImages/>
 
    <plugins>
+   	  <!-- OTC Plugins -->
       <plugin id="ch.opentrainingcenter.client.core"/>
+      <plugin id="ch.opentrainingcenter.server.service"/>
+      
+      <!-- Third party -->
+      <plugin id="jodatime"/>
+      <plugin id="junit"/>
+      <plugin id="logging"/>
+      
+      
+      <!-- Eclipse.... -->
       <plugin id="com.ibm.icu"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>

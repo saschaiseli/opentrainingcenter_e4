@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: junit
+Export-Package: junit.extensions,junit.framework,junit.runner,junit.te
+ xtui,org.hamcrest,org.hamcrest.core,org.hamcrest.internal,org.junit,o
+ rg.junit.experimental,org.junit.experimental.categories,org.junit.exp
+ erimental.max,org.junit.experimental.results,org.junit.experimental.r
+ unners,org.junit.experimental.theories,org.junit.experimental.theorie
+ s.internal,org.junit.experimental.theories.suppliers,org.junit.intern
+ al,org.junit.internal.builders,org.junit.internal.matchers,org.junit.
+ internal.requests,org.junit.internal.runners,org.junit.internal.runne
+ rs.model,org.junit.internal.runners.rules,org.junit.internal.runners.
+ statements,org.junit.matchers,org.junit.rules,org.junit.runner,org.ju
+ nit.runner.manipulation,org.junit.runner.notification,org.junit.runne
+ rs,org.junit.runners.model,org.junit.runners.parameterized,org.junit.
+ validator
+Bundle-Name: Junit
+Bundle-Version: 1.0.0.201506151821
+Bundle-ClassPath: hamcrest-core-1.3.jar,junit-4.12.jar
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+
