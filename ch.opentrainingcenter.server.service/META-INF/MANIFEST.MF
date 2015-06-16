@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Server - Service - Layer
-Bundle-SymbolicName: ch.opentrainingcenter.server.service
+Bundle-SymbolicName: ch.opentrainingcenter.server.service;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: ch.opentrainingcenter.server.service.Activator
 Bundle-Vendor: Sascha Iseli
