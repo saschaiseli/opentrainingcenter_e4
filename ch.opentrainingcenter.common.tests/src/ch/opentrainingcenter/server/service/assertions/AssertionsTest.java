@@ -5,6 +5,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import ch.opentrainingcenter.common.assertions.Assertions;
+
 @SuppressWarnings("nls")
 public class AssertionsTest {
     @Test(expected = IllegalArgumentException.class)

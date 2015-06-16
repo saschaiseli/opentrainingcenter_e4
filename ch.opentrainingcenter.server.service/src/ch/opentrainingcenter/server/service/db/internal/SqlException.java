@@ -1,4 +1,4 @@
-package ch.opentrainingcenter.server.service.db;
+package ch.opentrainingcenter.server.service.db.internal;
 
 public class SqlException extends Exception {
 

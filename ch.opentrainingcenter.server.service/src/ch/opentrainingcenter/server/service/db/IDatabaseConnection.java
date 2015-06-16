@@ -2,6 +2,10 @@ package ch.opentrainingcenter.server.service.db;
 
 import java.io.File;
 
+import ch.opentrainingcenter.server.service.db.internal.DBSTATE;
+import ch.opentrainingcenter.server.service.db.internal.DatabaseConnectionState;
+import ch.opentrainingcenter.server.service.db.internal.SqlException;
+
 /**
  * Datenbank Verbindungsdetails / Configuration und Administration
  */

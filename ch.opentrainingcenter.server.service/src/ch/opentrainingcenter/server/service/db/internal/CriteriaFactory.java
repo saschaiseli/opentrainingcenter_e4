@@ -17,10 +17,11 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package ch.opentrainingcenter.server.service.db;
+package ch.opentrainingcenter.server.service.db.internal;
 
 import java.util.Set;
 
+import ch.opentrainingcenter.server.service.db.ISearchCriteria;
 import ch.opentrainingcenter.server.service.db.internal.criteria.DistanceCriteria;
 import ch.opentrainingcenter.server.service.db.internal.criteria.NoteCriteria;
 import ch.opentrainingcenter.server.service.db.internal.criteria.SportCriteria;
@@ -50,7 +51,6 @@ public final class CriteriaFactory {
     }
 
     public static ISearchCriteria createStreckeCriteria(final int referenzTrainingId) {
-        // TODO Auto-generated method stub
         return new StreckeCriteria(referenzTrainingId);
     }
 }

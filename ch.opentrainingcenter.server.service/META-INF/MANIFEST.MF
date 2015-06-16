@@ -13,6 +13,7 @@ Import-Package: javax.inject,
 Bundle-ActivationPolicy: lazy
 Require-Bundle: jodatime,
  logging,
- ch.opentrainingcenter.transfer
+ ch.opentrainingcenter.transfer,
+ ch.opentrainingcenter.common
 Eclipse-RegisterBuddy: logging,jodatime
 Export-Package: ch.opentrainingcenter.server.service.db

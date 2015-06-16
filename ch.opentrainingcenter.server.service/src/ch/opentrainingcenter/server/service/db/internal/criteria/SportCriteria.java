@@ -2,7 +2,7 @@ package ch.opentrainingcenter.server.service.db.internal.criteria;
 
 import java.util.Set;
 
-import ch.opentrainingcenter.server.service.assertions.Assertions;
+import ch.opentrainingcenter.common.assertions.Assertions;
 import ch.opentrainingcenter.server.service.db.ISearchCriteria;
 import ch.opentrainingcenter.transfer.ITraining;
 import ch.opentrainingcenter.transfer.Sport;

@@ -1,4 +1,5 @@
-package ch.opentrainingcenter.server.service.db;
+package ch.opentrainingcenter.server.service.db.internal;
+
 
 /**
  * Immutable!! Gibt Auskunft über den Zustand einer Datenbankverbindung und

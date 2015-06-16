@@ -17,11 +17,12 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package ch.opentrainingcenter.server.service.db;
+package ch.opentrainingcenter.server.service.db.internal;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import ch.opentrainingcenter.server.service.db.ISearchCriteria;
 import ch.opentrainingcenter.transfer.ITraining;
 
 public class CriteriaContainer implements ISearchCriteria {

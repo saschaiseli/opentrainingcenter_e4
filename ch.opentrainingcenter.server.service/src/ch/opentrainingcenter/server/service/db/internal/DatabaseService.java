@@ -9,7 +9,7 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.equinox.app.IApplicationContext;
 
-import ch.opentrainingcenter.server.service.assertions.Assertions;
+import ch.opentrainingcenter.common.assertions.Assertions;
 import ch.opentrainingcenter.server.service.db.DatabaseConnectionConfiguration;
 import ch.opentrainingcenter.server.service.db.DbConnection;
 import ch.opentrainingcenter.server.service.db.IDatabaseAccess;
