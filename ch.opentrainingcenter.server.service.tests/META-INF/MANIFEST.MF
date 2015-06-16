@@ -6,5 +6,4 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Sascha Iseli
 Fragment-Host: ch.opentrainingcenter.server.service
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: junit
-Eclipse-RegisterBuddy: otc_junit4
+Require-Bundle: org.junit
