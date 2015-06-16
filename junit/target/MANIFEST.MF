@@ -14,7 +14,7 @@ Export-Package: junit.extensions,junit.framework,junit.runner,junit.te
  rs,org.junit.runners.model,org.junit.runners.parameterized,org.junit.
  validator
 Bundle-Name: Junit
-Bundle-Version: 1.0.0.201506151821
+Bundle-Version: 1.0.0.201506161940
 Bundle-ClassPath: hamcrest-core-1.3.jar,junit-4.12.jar
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

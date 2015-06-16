@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <units size='1'>
-  <unit id='junit' version='1.0.0.201506151821' singleton='false'>
-    <update id='junit' range='[0.0.0,1.0.0.201506151821)' severity='0'/>
+  <unit id='junit' version='1.0.0.201506161940' singleton='false'>
+    <update id='junit' range='[0.0.0,1.0.0.201506161940)' severity='0'/>
     <properties size='4'>
       <property name='org.eclipse.equinox.p2.name' value='Junit'/>
       <property name='maven-groupId' value='ch.opentrainingcenter'/>
@@ -9,8 +9,8 @@
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>
     </properties>
     <provides size='36'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='junit' version='1.0.0.201506151821'/>
-      <provided namespace='osgi.bundle' name='junit' version='1.0.0.201506151821'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='junit' version='1.0.0.201506161940'/>
+      <provided namespace='osgi.bundle' name='junit' version='1.0.0.201506161940'/>
       <provided namespace='java.package' name='junit.extensions' version='0.0.0'/>
       <provided namespace='java.package' name='junit.framework' version='0.0.0'/>
       <provided namespace='java.package' name='junit.runner' version='0.0.0'/>
@@ -47,13 +47,13 @@
       <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
     </provides>
     <artifacts size='1'>
-      <artifact classifier='osgi.bundle' id='junit' version='1.0.0.201506151821'/>
+      <artifact classifier='osgi.bundle' id='junit' version='1.0.0.201506161940'/>
     </artifacts>
     <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
     <touchpointData size='1'>
       <instructions size='1'>
         <instruction key='manifest'>
-          Bundle-SymbolicName: junit&#xA;Bundle-Version: 1.0.0.201506151821&#xA;
+          Bundle-SymbolicName: junit&#xA;Bundle-Version: 1.0.0.201506161940&#xA;
         </instruction>
       </instructions>
     </touchpointData>
