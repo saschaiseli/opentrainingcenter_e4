@@ -43,13 +43,15 @@
 		<module>ch.opentrainingcenter.client.core</module>
 		<module>ch.opentrainingcenter.client.core.product</module>
 
-		<!-- Communication -->
+		<!-- common -->
 		<module>ch.opentrainingcenter.transfer</module>
 		<module>ch.opentrainingcenter.common</module>
+		<module>ch.opentrainingcenter.i18n</module>
 
 		<!-- Server -->
 		<module>ch.opentrainingcenter.server.service</module>
 		<module>ch.opentrainingcenter.server.integration</module>
+		<module>ch.opentrainingcenter.server.db.h2</module>
 
 		<!-- Target Definition -->
 		<module>ch.opentrainingcenter.build.targetdefinition</module>
@@ -58,11 +60,14 @@
 		<!-- Tests -->
 		<module>ch.opentrainingcenter.common.tests</module>
 		<module>ch.opentrainingcenter.server.service.tests</module>
+		<module>ch.opentrainingcenter.server.integration.tests</module>
+		<module>ch.opentrainingcenter.server.db.h2.tests</module>
 
 		<!-- 3th Party -->
 		<module>org.hibernate</module>
 		<module>jodatime</module>
 		<module>logging</module>
+		<module>h2_lib</module>
 
 		<!-- 3th Party Tests -->
 		<module>junit</module>
