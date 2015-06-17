@@ -1,4 +1,4 @@
-package ch.opentrainingcenter.server.service.db.internal;
+package ch.opentrainingcenter.server.service.db;
 
 public enum DBSTATE {
 

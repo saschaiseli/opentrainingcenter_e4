@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: I18n
+Bundle-SymbolicName: ch.opentrainingcenter.i18n
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: ch.opentrainingcenter.i18n.Activator
+Bundle-Vendor: Sascha Iseli
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.core.runtime
+Export-Package: ch.opentrainingcenter.i18n

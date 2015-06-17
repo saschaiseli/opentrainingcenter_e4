@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ch.opentrainingcenter.transfer.impl.Athlete" table="ATHLETE">
+		<id name="id" type="int">
+			<column name="ID" />
+			<generator class="sequence">
+				<param name="sequence">athlete_id_sequence</param>
+			</generator>
+		</id>
+        <property name="name" type="string">
+            <column name="NAME" />
+        </property>
+        <property name="birthday" type="java.util.Date">
+            <column name="BIRTHDAY" not-null="true" />
+        </property>
+        <property name="maxheartrate" type="java.lang.Integer">
+            <column name="MAXHEARTRATE" />
+        </property>
+        <set name="routes" table="ROUTE" inverse="true" cascade="all" lazy="true" fetch="select">
+            <key>
+                <column name="ID_FK_ATHLETE" />
+            </key>
+            <one-to-many class="ch.opentrainingcenter.transfer.impl.Route" />
+        </set>
+        <set name="healths" table="HEALTH" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_FK_ATHLETE" />
+            </key>
+            <one-to-many class="ch.opentrainingcenter.transfer.impl.Health" />
+        </set>
+        <set name="trainings" table="TRAINING" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_FK_ATHLETE" />
+            </key>
+            <one-to-many class="ch.opentrainingcenter.transfer.impl.Training" />
+        </set>
+        <set name="planungwoches" table="PLANUNGWOCHE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_FK_ATHLETE" />
+            </key>
+            <one-to-many class="ch.opentrainingcenter.transfer.impl.Planungwoche" />
+        </set>
+    </class>
+</hibernate-mapping>

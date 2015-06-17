@@ -14,3 +14,6 @@ Require-Bundle: ch.opentrainingcenter.transfer,
  logging,
  jodatime,
  ch.opentrainingcenter.common
+Export-Package: ch.opentrainingcenter.server.integration,
+ ch.opentrainingcenter.server.integration.cache,
+ ch.opentrainingcenter.server.integration.dao

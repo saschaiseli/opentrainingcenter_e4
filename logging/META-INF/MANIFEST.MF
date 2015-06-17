@@ -5,7 +5,8 @@ Bundle-SymbolicName: logging
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: log4j-1.2.16.jar,
  slf4j-api-1.6.4.jar,
- slf4j-simple-1.6.4.jar
+ slf4j-simple-1.6.4.jar,
+ resource/
 Export-Package: org.apache.log4j,
  org.apache.log4j.chainsaw,
  org.apache.log4j.config,
@@ -31,3 +32,4 @@ Export-Package: org.apache.log4j,
  org.slf4j.impl,
  org.slf4j.spi
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Eclipse-BuddyPolicy: registered

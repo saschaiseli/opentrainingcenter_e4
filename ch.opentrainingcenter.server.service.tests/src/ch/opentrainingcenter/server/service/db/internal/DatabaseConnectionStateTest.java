@@ -1,12 +1,12 @@
-package ch.opentrainingcenter.server.service.db;
+package ch.opentrainingcenter.server.service.db.internal;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import ch.opentrainingcenter.server.service.db.internal.DBSTATE;
-import ch.opentrainingcenter.server.service.db.internal.DatabaseConnectionState;
+import ch.opentrainingcenter.server.service.db.DBSTATE;
+import ch.opentrainingcenter.server.service.db.DatabaseConnectionState;
 
 @SuppressWarnings("nls")
 public class DatabaseConnectionStateTest {
