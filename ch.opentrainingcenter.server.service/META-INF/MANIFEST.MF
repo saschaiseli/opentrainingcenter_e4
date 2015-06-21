@@ -16,4 +16,5 @@ Require-Bundle: jodatime,
  ch.opentrainingcenter.transfer,
  ch.opentrainingcenter.common
 Eclipse-RegisterBuddy: logging,jodatime
-Export-Package: ch.opentrainingcenter.server.service.db
+Export-Package: ch.opentrainingcenter.server.service.db,
+ ch.opentrainingcenter.server.service.importer

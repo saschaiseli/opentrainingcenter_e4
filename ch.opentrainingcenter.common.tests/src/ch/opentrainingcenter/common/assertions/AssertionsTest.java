@@ -1,4 +1,4 @@
-package ch.opentrainingcenter.server.service.assertions;
+package ch.opentrainingcenter.common.assertions;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
