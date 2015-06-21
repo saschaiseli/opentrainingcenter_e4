@@ -14,6 +14,16 @@ Require-Bundle: ch.opentrainingcenter.transfer,
  logging,
  jodatime,
  ch.opentrainingcenter.common
-Export-Package: ch.opentrainingcenter.server.integration,
- ch.opentrainingcenter.server.integration.cache,
- ch.opentrainingcenter.server.integration.dao
+Eclipse-RegisterBuddy: org.hibernate, logging
+Export-Package: ch.opentrainingcenter.server.integration;uses:="org.osgi.framework,ch.opentrainingcenter.server.service.db,ch.opentrainingcenter.server.integration.dao",
+ ch.opentrainingcenter.server.integration.cache;uses:="ch.opentrainingcenter.transfer",
+ ch.opentrainingcenter.server.integration.dao;
+  uses:="org.joda.time,
+   org.hibernate.cfg,
+   ch.opentrainingcenter.server.integration.cache,
+   ch.opentrainingcenter.server.integration,
+   org.hibernate,
+   ch.opentrainingcenter.transfer,
+   ch.opentrainingcenter.server.service.db"
+Bundle-ClassPath: hibernate/,
+ .

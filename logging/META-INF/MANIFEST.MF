@@ -3,10 +3,10 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Logging
 Bundle-SymbolicName: logging
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: log4j-1.2.16.jar,
- slf4j-api-1.6.4.jar,
- slf4j-simple-1.6.4.jar,
- resource/
+Bundle-ClassPath: slf4j-api-1.6.4.jar,
+ log4j-1.2.16.jar,
+ resource/,
+ slf4j-simple-1.6.4.jar
 Export-Package: org.apache.log4j,
  org.apache.log4j.chainsaw,
  org.apache.log4j.config,

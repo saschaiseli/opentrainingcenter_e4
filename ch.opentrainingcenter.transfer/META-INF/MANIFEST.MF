@@ -7,5 +7,7 @@ Bundle-Activator: ch.opentrainingcenter.Activator
 Bundle-Vendor: Sascha Iseli
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: ch.opentrainingcenter.transfer
+Export-Package: ch.opentrainingcenter.transfer,
+ ch.opentrainingcenter.transfer.impl
 Require-Bundle: org.eclipse.core.runtime
+Eclipse-RegisterBuddy: org.hibernate, logging

@@ -2,10 +2,14 @@ package ch.opentrainingcenter.server.integration.dao;
 
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
-import org.hibernate.MappingException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.SessionFactoryObserver;
 import org.hibernate.Transaction;
+import org.hibernate.cfg.Settings;
+import org.hibernate.engine.Mapping;
+import org.hibernate.event.EventListeners;
+import org.hibernate.impl.SessionFactoryImpl;
 
 import ch.opentrainingcenter.common.assertions.Assertions;
 import ch.opentrainingcenter.server.integration.USAGE;
@@ -14,12 +18,13 @@ import ch.opentrainingcenter.server.service.db.DatabaseConnectionConfiguration;
 @SuppressWarnings("nls")
 public class ConnectionConfig implements IConnectionConfig {
 
+    private static final Logger LOG = Logger.getLogger(ConnectionConfig.class);
+
     private static final String HIBERNATE_POOL_SIZE = "hibernate.pool_size";
     private static final String HIBERNATE_FORMAT_SQL = "hibernate.format_sql";
     private static final String HIBERNATE_SHOW_SQL = "hibernate.show_sql";
-    private static final Logger LOG = Logger.getLogger(ConnectionConfig.class);
     private Session session;
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
     private final USAGE usage;
     private final DatabaseConnectionConfiguration config;
 
@@ -37,29 +42,49 @@ public class ConnectionConfig implements IConnectionConfig {
         configuration.setProperty(HIBERNATE_SHOW_SQL, String.valueOf(usage.isShowSql()));
         configuration.setProperty(HIBERNATE_FORMAT_SQL, String.valueOf(usage.isFormatSql()));
         configuration.setProperty("hibernate.connection.pool_size", String.valueOf(10));
-        try {
-            configuration.addResource("Athlete.hbm.xml", this.getClass().getClassLoader());
-            configuration.addResource("Health.hbm.xml", this.getClass().getClassLoader());
-            configuration.addResource("Weather.hbm.xml", this.getClass().getClassLoader());
-            configuration.addResource("Training.hbm.xml", this.getClass().getClassLoader());
-            configuration.addResource("Shoe.hbm.xml", this.getClass().getClassLoader());
-            configuration.addResource("Tracktrainingproperty.hbm.xml", this.getClass().getClassLoader());
-            configuration.addResource("Streckenpunkte.hbm.xml", this.getClass().getClassLoader());
-            configuration.addResource("Planungwoche.hbm.xml", this.getClass().getClassLoader());
-            configuration.addResource("Route.hbm.xml", this.getClass().getClassLoader());
-            configuration.addResource("LapInfo.hbm.xml", this.getClass().getClassLoader());
-            LOG.info(String.format("Hibernate Config: show_sql=%s", configuration.getProperty(HIBERNATE_SHOW_SQL)));
-            LOG.info(String.format("Hibernate Config: format_sql=%s", configuration.getProperty(HIBERNATE_FORMAT_SQL)));
-            LOG.info(String.format("Hibernate Config: pool_size=%s", configuration.getProperty(HIBERNATE_POOL_SIZE)));
-            sessionFactory = configuration.buildSessionFactory();
-        } catch (final MappingException e) {
-            LOG.error(e);
-        }
+        // try {
+        configuration.addResource("Planungwoche.hbm.xml", this.getClass().getClassLoader());
+        configuration.addResource("Athlete.hbm.xml", this.getClass().getClassLoader());
+        configuration.addResource("Health.hbm.xml", this.getClass().getClassLoader());
+        configuration.addResource("Weather.hbm.xml", this.getClass().getClassLoader());
+        configuration.addResource("Training.hbm.xml", this.getClass().getClassLoader());
+        configuration.addResource("Shoe.hbm.xml", this.getClass().getClassLoader());
+        configuration.addResource("Tracktrainingproperty.hbm.xml", this.getClass().getClassLoader());
+        configuration.addResource("Streckenpunkte.hbm.xml", this.getClass().getClassLoader());
+        configuration.addResource("Route.hbm.xml", this.getClass().getClassLoader());
+        configuration.addResource("LapInfo.hbm.xml", this.getClass().getClassLoader());
+        LOG.info(String.format("Hibernate Config: show_sql=%s", configuration.getProperty(HIBERNATE_SHOW_SQL)));
+        LOG.info(String.format("Hibernate Config: format_sql=%s", configuration.getProperty(HIBERNATE_FORMAT_SQL)));
+        LOG.info(String.format("Hibernate Config: pool_size=%s", configuration.getProperty(HIBERNATE_POOL_SIZE)));
+        LOG.info("Vor dem Build session....: " + configuration);// .configure());
+        final Mapping mapping = configuration.buildMapping();
+        LOG.info("--->Mapping: " + mapping);
+
+        final EventListeners listeners = configuration.getEventListeners();
+        LOG.info("EventListeners: " + listeners);
+
+        final Settings settings = configuration.buildSettings();
+        LOG.info("Settings " + settings);
+
+        final SessionFactoryObserver observer = configuration.getSessionFactoryObserver();
+        LOG.info("SessionFactoryObserver: " + observer);
+
+        final SessionFactory sf = new SessionFactoryImpl(configuration, mapping, settings, listeners, observer);
+        LOG.info("SessionFactory: " + sf);
+
+        sessionFactory = configuration.buildSessionFactory();
+        LOG.info("SessionFactory: " + sessionFactory);
+        // } catch (final MappingException e) {
+        LOG.error("----------------------------------> scheisse <-----------------------------------------");
+        // LOG.error(e.getMessage(), e);
+        // }
     }
 
     @Override
     public Transaction begin() {
-        return getSession().beginTransaction();
+        final Session s = getSession();
+        LOG.info("Begin transaction Sessionist: " + s);
+        return s.beginTransaction();
 
     }
 
