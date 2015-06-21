@@ -50,6 +50,7 @@
 
 		<!-- Server -->
 		<module>ch.opentrainingcenter.server.service</module>
+		<module>ch.opentrainingcenter.server.importer.fit</module>
 		<module>ch.opentrainingcenter.server.integration</module>
 		<module>ch.opentrainingcenter.server.db.h2</module>
 
@@ -60,6 +61,7 @@
 		<!-- Tests -->
 		<module>ch.opentrainingcenter.common.tests</module>
 		<module>ch.opentrainingcenter.server.service.tests</module>
+		<module>ch.opentrainingcenter.server.importer.fit.tests</module>
 		<module>ch.opentrainingcenter.server.integration.tests</module>
 		<module>ch.opentrainingcenter.server.db.h2.tests</module>
 
@@ -68,7 +70,8 @@
 		<module>jodatime</module>
 		<module>logging</module>
 		<module>h2_lib</module>
-
+		<module>com.garmin.fit</module>
+		
 		<!-- 3th Party Tests -->
 		<module>junit</module>
 		<module>mockito</module>
