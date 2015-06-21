@@ -4,12 +4,7 @@ import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.SessionFactoryObserver;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Settings;
-import org.hibernate.engine.Mapping;
-import org.hibernate.event.EventListeners;
-import org.hibernate.impl.SessionFactoryImpl;
 
 import ch.opentrainingcenter.common.assertions.Assertions;
 import ch.opentrainingcenter.server.integration.USAGE;
@@ -42,7 +37,6 @@ public class ConnectionConfig implements IConnectionConfig {
         configuration.setProperty(HIBERNATE_SHOW_SQL, String.valueOf(usage.isShowSql()));
         configuration.setProperty(HIBERNATE_FORMAT_SQL, String.valueOf(usage.isFormatSql()));
         configuration.setProperty("hibernate.connection.pool_size", String.valueOf(10));
-        // try {
         configuration.addResource("Planungwoche.hbm.xml", this.getClass().getClassLoader());
         configuration.addResource("Athlete.hbm.xml", this.getClass().getClassLoader());
         configuration.addResource("Health.hbm.xml", this.getClass().getClassLoader());
@@ -56,28 +50,8 @@ public class ConnectionConfig implements IConnectionConfig {
         LOG.info(String.format("Hibernate Config: show_sql=%s", configuration.getProperty(HIBERNATE_SHOW_SQL)));
         LOG.info(String.format("Hibernate Config: format_sql=%s", configuration.getProperty(HIBERNATE_FORMAT_SQL)));
         LOG.info(String.format("Hibernate Config: pool_size=%s", configuration.getProperty(HIBERNATE_POOL_SIZE)));
-        LOG.info("Vor dem Build session....: " + configuration);// .configure());
-        final Mapping mapping = configuration.buildMapping();
-        LOG.info("--->Mapping: " + mapping);
-
-        final EventListeners listeners = configuration.getEventListeners();
-        LOG.info("EventListeners: " + listeners);
-
-        final Settings settings = configuration.buildSettings();
-        LOG.info("Settings " + settings);
-
-        final SessionFactoryObserver observer = configuration.getSessionFactoryObserver();
-        LOG.info("SessionFactoryObserver: " + observer);
-
-        final SessionFactory sf = new SessionFactoryImpl(configuration, mapping, settings, listeners, observer);
-        LOG.info("SessionFactory: " + sf);
-
         sessionFactory = configuration.buildSessionFactory();
-        LOG.info("SessionFactory: " + sessionFactory);
-        // } catch (final MappingException e) {
-        LOG.error("----------------------------------> scheisse <-----------------------------------------");
-        // LOG.error(e.getMessage(), e);
-        // }
+        LOG.info(String.format("SessionFactory: %s", sessionFactory));
     }
 
     @Override
